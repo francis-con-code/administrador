@@ -6,28 +6,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity
 @Getter
 @Setter
+@Entity
+@Table
 @AllArgsConstructor
 @NoArgsConstructor
-public class Stock {
+public class StockMovement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
-    private BigDecimal quantity;
-    private BigDecimal minimumStock;
     @Enumerated(EnumType.STRING)
-    private UnitStock unit;
-    private LocalDateTime lastUpdated;
-    private LocalDateTime expirationDate;
-    private String location;
-
+    private MovementType type;
+    private Integer quantity;
+    @Enumerated(EnumType.STRING)
+    private  MovementReason reason;
+    private LocalDateTime createAt;
+    private  String reference;
 
 }
