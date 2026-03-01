@@ -9,4 +9,5 @@ public interface UserService {
     void deletedUser();
     void updateUser();
     void updateAdmin(UserAdminDTO userAdminDTO);
+    boolean loginUser(UserAdminDTO userAdminDTO);
 }

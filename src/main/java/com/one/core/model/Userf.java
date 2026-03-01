@@ -23,4 +23,5 @@ public class Userf {
     private UserRol rol;
     private String password;
     private String email;
+    private Long tandenId;
 }
