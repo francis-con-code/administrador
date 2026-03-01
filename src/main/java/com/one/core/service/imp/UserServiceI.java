@@ -1,5 +1,6 @@
 package com.one.core.service.imp;
 
+import com.one.core.model.dto.UserAdminDTO;
 import com.one.core.repository.UserRepository;
 import com.one.core.service.UserService;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class UserServiceI implements UserService {
     }
 
     @Override
-    public void createAdmin() {
+    public void createAdmin(UserAdminDTO userAdminDTO) {
 
     }
 
@@ -24,7 +25,7 @@ public class UserServiceI implements UserService {
     }
 
     @Override
-    public void deletedAdmin() {
+    public void deletedAdmin(Long id) {
 
     }
 
@@ -39,7 +40,7 @@ public class UserServiceI implements UserService {
     }
 
     @Override
-    public void updateAdmin() {
+    public void updateAdmin(UserAdminDTO userAdminDTO) {
 
     }
 }
