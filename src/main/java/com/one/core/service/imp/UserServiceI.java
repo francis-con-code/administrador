@@ -6,10 +6,7 @@ import com.one.core.model.dto.UserAdminDTO;
 import com.one.core.repository.UserRepository;
 import com.one.core.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
-
-import java.util.Objects;
 import java.util.Optional;
 
 @Slf4j
@@ -29,8 +26,8 @@ public class UserServiceI implements UserService {
         newAdmin.setName(userAdminDTO.getName());
         newAdmin.setPassword(userAdminDTO.getPassword());
         newAdmin.setRol(UserRol.ADMIN);
-        newAdmin.setTandenId(userAdminDTO.getTandenId());
         userRepository.save(newAdmin);
+
         log.info("Se creo un nuevo Admin");
     }
 

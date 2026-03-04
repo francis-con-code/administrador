@@ -6,26 +6,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
-@Table
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Business {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String description;
-    private BigDecimal price;
-    private boolean active = true;
-    private LocalDateTime  createdAt;
-    @ManyToOne
-    @JoinColumn(name = "business_id")
-    private Business business;
-
+    private Boolean active;
+    private LocalDateTime createAt;
+    @OneToMany
+    private List<Userf> users;
+    @OneToMany
+    private List<Stock> stocks;
+    @OneToMany
+    private List<StockMovement> stockMovements;
+    @OneToMany
+    private List<Product> products;
 }

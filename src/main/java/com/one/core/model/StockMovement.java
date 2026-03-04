@@ -28,5 +28,8 @@ public class StockMovement {
     private  MovementReason reason;
     private LocalDateTime createAt;
     private  String reference;
+    @ManyToOne
+    @JoinColumn(name = "business_id")
+    private Business business;
 
 }

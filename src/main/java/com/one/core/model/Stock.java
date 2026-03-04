@@ -28,6 +28,9 @@ public class Stock {
     private LocalDateTime lastUpdated;
     private LocalDateTime expirationDate;
     private String location;
+    @ManyToOne
+    @JoinColumn(name = "business_id")
+    private Business business;
 
 
 }
