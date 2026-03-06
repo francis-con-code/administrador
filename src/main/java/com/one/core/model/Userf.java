@@ -17,6 +17,7 @@ public class Userf {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Enumerated(EnumType.STRING)
     private UserRol rol;
     private String password;
     private String email;
